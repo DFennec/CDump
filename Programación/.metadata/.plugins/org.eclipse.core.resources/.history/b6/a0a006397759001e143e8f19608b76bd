@@ -1,0 +1,15 @@
+package deberesTema2;
+
+public class _01_09_22Cafetería {
+
+	public static void main(String[] args) {
+	System.out.println("¿Qué tipo de café desea?"+"\n1.Americano"+"\n2. Capuccino"+"\n3. Latte");
+	
+	System.out.println("¿Desea algún extra?"+"\n1.Crema"+"\n2. Chocolate"+"\n3. No quiero ninguno");
+	
+	calculos();
+	}
+public static void calculos(){
+	System.out.println();
+}
+}

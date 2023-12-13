@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejilla</title>
+</head>
+<style>
+    body{
+        font-size: 20px;
+        padding: 2rem;
+    }
+    #tarjetas{
+        max-width: 1700px;
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    }
+    .tarjeta{
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(92, 2, 2);
+        color: gray;
+        padding: 1rem;
+        height: 3rem;
+    }
+</style>
+<body>
+    <div id="tarjetas">
+        <div class="tarjeta">UNO</div>
+        <div class="tarjeta">DOS</div>
+        <div class="tarjeta">TRES</div>
+        <div class="tarjeta">CUATRO</div>
+        <div class="tarjeta">CINCO</div>
+        <div class="tarjeta">SEIS</div>
+        <div class="tarjeta">SIETE</div>
+        <div class="tarjeta">OCHO</div>
+        <div class="tarjeta">NUEVE</div>
+        <div class="tarjeta">DIEZ</div>
+    </div>
+</body>
+</html>

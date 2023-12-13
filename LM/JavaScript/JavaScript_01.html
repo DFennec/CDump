@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript primera clase</title>
+<script>
+    //Hola, esto es un comentario.
+    /* Esto
+    es
+    un
+    comentario
+    multilínea*/
+    //console.log("Satán te ama otra vez");
+    //alert("Satanás te ama");
+    
+    //VAR, es una declaración de variable global, por eso está deprecated desde la salida de let, puede utilizarse en cualquier lado de un programa.
+    //LET, declaración de una variable en el ámbito local, la función, etc. No puede leerse ni utilizarse fuera de él.
+    //CONST, declaración de un dato que no varía durante la ejecución del programa.
+    let nombre="Camilín";
+    function SALUDAR(){
+        console.log("Hola, "+nombre);
+    };
+</script>
+</head>
+<body onload="SALUDAR()">
+    <button onclick="SALUDAR()">SALUDAR</button>
+    <br>
+    <p onmouseover="SALUDAR()">PÚLSAME</p>
+    <button onclick="document.getElementById('fecha').innerHTML=Date();">FECHA</button>
+    <p id="fecha" onmouseover="this.style.color='red'"></p>
+    <p id="SaludoASalvatore" onmouseover="document.getElementById('SaludoASalvatore').textContent='Hello, dear Salvatore';" onmouseout="this.textContent='Hola, querido Salvatore'" onclick="this.style.color='blue'; this.style.fontSize='3em';this.style.boxShadow='3px 3px 3px gray'; this.style.textShadow='3px 3px 3px gray';">Hola, querido Salvatore</p>
+</body>
+</html>

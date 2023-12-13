@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;deberesTema2._ClaseEjPrecioProductosConFor&apos; to &apos;_DefinirConstantesConFinal&apos;&#x0D;&#x0A;- Original project: &apos;Deberes&apos;&#x0D;&#x0A;- Original element: &apos;deberesTema2._ClaseEjPrecioProductosConFor&apos;&#x0D;&#x0A;- Renamed element: &apos;deberesTema2._DefinirConstantesConFinal&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;_ClaseEjPrecioProductosConFor&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;deberesTema2{_ClaseEjPrecioProductosConFor.java[_ClaseEjPrecioProductosConFor" matchStrategy="1" name="_DefinirConstantesConFinal" qualified="false" references="true" similarDeclarations="false" stamp="1695405666206" textual="false" version="1.0"/>
+</session>

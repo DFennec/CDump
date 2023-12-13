@@ -1,0 +1,17 @@
+package clase1;
+
+public class Coordinate {
+	double Cx =0;
+	double Cy =0;
+	double localizacion = {15.22,12.33}:
+	public 
+	public boolean intersecta(Cx,Cy) {
+		if (Cx==localizacion{0} && Cy==localizacion{1}) {
+			
+		return true;
+		}else {
+			return false;	
+		}
+	}
+	
+}

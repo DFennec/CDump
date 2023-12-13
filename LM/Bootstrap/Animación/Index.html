@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMACIONES</title>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-image: url('FondoMario.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+    }
+    #mario{
+        position: absolute;
+        width: 7%;
+        top: 75%;
+        left: -10%;
+        z-index: 1;
+        -webkit-animation: mariomove 5s linear infinite;
+    }
+    @-webkit-keyframes mariomove{
+        15%{top: 75%;}
+        25%{top: 66%;}
+        26%{top: 67%;}
+        27%{top: 68%;}
+        28%{top: 69%;}
+        29%{top: 72%;}
+        31%{top: 75%;}
+        60%{top: 75%;}
+        65%{top: 66%;}
+        70%{top: 67%;}
+        71%{top: 68%;}
+        72%{top: 69%;}
+        73%{top: 72%;}
+        75%{top: 75%;}
+        100%{left:110%;}
+    }
+
+    #seta1{
+        position: absolute;
+        width: 4%;
+        top: 80.5%;
+        left: 55%;
+        -webkit-animation: setamove 10s linear infinite;
+    }
+    @-webkit-keyframes setamove{
+        0%{left:100%;}
+        100%{left:0%;}
+    }
+    #moneda1{
+        position: absolute;
+        width: 3%;
+        bottom: 12%;
+        right: 80%;
+        -webkit-animation: monedamove 4s infinite;
+    }
+    @-webkit-keyframes monedamove{
+        50%{bottom:15%;}
+        100%{bottom:12%;}
+    }
+    #goom1{
+        position: absolute;
+        width: 4%;
+        bottom: 12%;
+        left: 110%;
+        -webkit-animation: goommove 20s infinite;
+    }
+    @-webkit-keyframes goommove{
+        100%{left: -10%;}
+    }
+</style>
+</head>
+<body>
+    <img id="mario" src="MarioCorriendo.gif">
+    <img id="seta1" src="Retro-Mushroom-Super-icon.png">
+    <img id="moneda1" src="super-mario-bros-3-coint.webp">
+    <img id="goom1" src="goom.gif">
+</body>
+</html>

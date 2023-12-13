@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;_05Lección.DefinirClases&apos; to &apos;DefinirMétodos&apos;&#x0D;&#x0A;- Original project: &apos;_01JavaIntermedio&apos;&#x0D;&#x0A;- Original element: &apos;_05Lección.DefinirClases&apos;&#x0D;&#x0A;- Renamed element: &apos;_05Lección.DefinirMétodos&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DefinirClases&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;_05Lección{DefinirClases.java[DefinirClases" matchStrategy="1" name="DefinirMétodos" qualified="false" references="true" similarDeclarations="false" stamp="1695406700299" textual="false" version="1.0"/>
+</session>

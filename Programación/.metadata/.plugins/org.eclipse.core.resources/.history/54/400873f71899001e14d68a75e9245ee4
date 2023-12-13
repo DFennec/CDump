@@ -1,0 +1,12 @@
+package clase1;
+
+public class Date {
+	public Date(int day, int month, int year);
+	/*Date que almacena día, fecha y hora*/
+	public int getDay();
+	public int getMonth();
+	public int getYear();
+	public void setDay(int day);
+	public void setMonth(int month);
+	public void setYear(int year);
+}

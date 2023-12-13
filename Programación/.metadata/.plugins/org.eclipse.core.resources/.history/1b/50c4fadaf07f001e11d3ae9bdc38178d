@@ -1,0 +1,11 @@
+package examen_2;
+
+public class AlvaroLozano {
+
+	public static void main(String[] args) {
+		int[] tempSemana= new int [7];
+		for () {
+		System.out.println("Por favor, introduce la temperatura del día "+i+": ");
+		}
+	}
+}

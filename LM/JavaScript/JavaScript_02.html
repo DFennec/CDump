@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 2-1</title>
+</head>
+<script>
+    let nombre,
+        apel1,
+        apel2,
+        persona,
+        block;
+    function LANZAR(){
+        nombre=document.getElementById("nombre").value;
+        apel1=document.getElementById("apel1").value;
+        apel2=document.getElementById("apel2").value;
+        document.getElementById("salida").innerHTML=nombre+' '+apel1+' '+apel2;
+        document.getElementById("salida1").innerHTML=apel1+' '+apel2+', '+nombre;
+        persona=apel1+" "+apel2+", "+nombre;
+        document.getElementById("salida2").innerHTML=persona;
+    };
+</script>
+<body>
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="text" id="apel1" placeholder="Primer Apellido" required>
+    <input type="text" id="apel2" placeholder="Segundo Apellido" required>
+    <button onclick="LANZAR()">EJECUTAR</button>
+    <HR></HR>
+    <p id="salida" style="font-size: 3vw; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;"></p>
+    <p id="salida1" style="font-size: 3vw; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;"></p>
+    <p id="salida2" style="font-size: 3vw; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;" onmouseover="block=document.getElementById('salida').innerHTML+document.getElementById('salida1').innerHTML+document.getElementById('salida2').innerHTML; document.getElementById('salida3').innerHTML=document.getElementById('salida3').innerHTML+block+' | '; document.getElementById('salida3').style.color='red';document.getElementById('salida3').style.fontSize='3vw';document.getElementById('salida3').style.fontFamily='Arial';"></p>
+    <p id="salida3"></p>
+</body>
+</html>

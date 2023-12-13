@@ -1,0 +1,8 @@
+package examen_2;
+
+public class AlvaroLozano {
+
+	public static void main(String[] args) {
+		int[] tempSemana= Array new{7};
+	}
+}

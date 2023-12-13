@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu dinámico</title>
+<style>
+#cabecera{
+    width: 75vw;
+    height: 200px;
+    margin: 0 auto;
+    background-image: url(Imagenes/Omniscient_Owl.webp), url(Imagenes/bogque.jpg);
+    background-position: 25%, top;
+    background-size: 10%,100%;
+    background-repeat: no-repeat;
+}
+#contenedor{
+    width: 75vw;
+    height: 70vh;
+    margin: 0 auto;
+}
+#izq{
+    width: 30%;
+    height: 100%;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    background-image: url("Imagenes/fondoilusorio.avif");
+    background-size: 10000%, 10000%;
+}
+#izq:hover{
+    background-size: 120%,100%;
+    transition: 7s;
+}
+#sup{
+    width: 70%;
+    height: 50%;
+    background-color: aqua;
+    background-image: url(Imagenes/montaña\ valle.jpg);
+    float: right;
+    background-size: 135%, 100%;
+    background-repeat: no-repeat;
+}
+#sup:hover{
+    background-image: url(Imagenes/montaña\ nieve.jpg);
+    background-size: 135%, 100%;
+    transition: 3s;
+    background-repeat: no-repeat;
+}
+#inf{
+    width: 70%;
+    height: 50%;
+    float: right;
+    background-color: blue;
+    background-image: url(Imagenes/marbrillo.jpg);
+    background-size: 130%, 100%;
+    background-repeat: no-repeat;
+}
+#inf:hover{
+    background-image: url(Imagenes/marbrillonegro.JPG);
+    background-size: 130%, 100%;
+    transition: 3s;
+    background-repeat: no-repeat;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 166, 0);
+    margin-left: 35px;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+    font-size: 45px;
+}
+h1{
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 30%;
+    font-size: 50px;
+    color: wheat;
+    font-weight: bold;
+    padding-top: 5%;
+}
+ul{
+    width: 75vw;
+    margin: 0 auto;
+}
+ul:hover{
+    background-color: black;
+    width: 80vw;
+    transition: 1s;
+}
+ul>li{
+    display: inline;
+    margin: 10px;
+    width:20%;
+    padding: 10px;
+    background: black;
+    color: white;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+}
+li:hover{
+    background-color: white;
+    color: black;
+    transition: 1s;
+}
+</style>
+</head>
+<body>
+    <div id="cabecera">
+        <h1>VIAJES EN LA NOCHE</h1>
+    </div>
+    <ul>
+        <li>INICIO</li>
+        <li>CONTINENTES</li>
+        <li>OCEANOS</li>
+        <li>ASTRONOMIA</li>
+        <li>DESIERTOS</li>
+        <li>MONTAÑAS</li>
+    </ul>
+    <div id="contenedor">
+        <div id="izq">
+            <br>
+            <br>
+            <br>
+            <a href="#">RUTAS</a><br>
+            <a href="#">VIAJES</a><br>
+            <a href="#">MARES</a><br>
+            <a href="#">SELVAS</a><br>
+            <a href="#">MONTES</a><br>
+        </div>
+        <div id="sup">
+
+        </div>
+        <div id="inf">
+
+        </div>
+
+    </div>
+</body>
+</html>

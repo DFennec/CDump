@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Rotativa</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-between;
+            align-content: space-around;
+            height: 100vh;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 8em;
+        }
+        .rotar{
+            background-color: transparent;
+            width: 500px;
+            height: 500px;
+        }/*perspective*/
+        .tarjeta{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+        .rotar:hover .tarjeta{
+            transform: rotateY(180deg);
+        }
+        .delante{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            color: aqua;
+            background-color: crimson;
+            animation-name: arcoiris;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+        }
+        .detras{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            backface-visibility: hidden;
+            justify-content: center;
+            align-content: center;
+            color: crimson;
+            background-color: aqua;
+        }
+        @keyframes arcoiris {
+  0%  {background:linear-gradient(0deg,blue 0%, black 100%);}
+  15%  {background:linear-gradient(90deg,blue 0%, black 100%);}
+  30%  {background:linear-gradient(135deg,blue 0%, black 100%);}
+  45%  {background:linear-gradient(180deg,blue 0%, black 100%);}
+  60%  {background:linear-gradient(225deg,blue 0%, black 100%);}
+  75%  {background:linear-gradient(270deg,blue 0%, black 100%);}
+  90%  {background:linear-gradient(315deg,blue 0%, black 100%);}
+  100% {background:linear-gradient(360deg,blue 0%, black 100%);}
+}
+    </style>
+</head>
+<body>
+    <div class="rotar">
+        <div class="tarjeta">
+            <div class="delante">
+                O
+            </div>
+            <div class="detras">
+                B
+            </div>
+        </div>
+        </div>
+
+    </div>
+    <div class="rotar">
+        <div class="tarjeta">
+            <div class="delante">
+                O
+            </div>
+            <div class="detras">
+                B
+            </div>
+        </div>
+        </div>
+
+    </div>
+    <div class="rotar">
+        <div class="tarjeta">
+            <div class="delante">
+                A
+            </div>
+            <div class="detras">
+                B
+            </div>
+        </div>
+        </div>
+
+    </div>
+    <div class="rotar">
+        <div class="tarjeta">
+            <div class="delante">
+                A
+            </div>
+            <div class="detras">
+                B
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEXBOX</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <style>
+        #contenedor{
+            width: 90vw;
+            margin: 0 auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            width: 100%;
+            height: 200px;
+            background-color: rgb(8, 92, 202);
+            color: white;
+            font-size: 2.3em;
+            text-align: center;
+            padding-top: 10px;
+        }
+        section{
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+        article{
+            width: 450px;
+            height: 350px;
+            background-color: rgb(226, 150, 96);
+            padding: 5px;
+            text-align: center;
+            margin: 5px;
+        }
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <header>
+            <h1>MARAVILLAS DEL MUNDO</h1>
+        </header>
+        <section>
+            <article style="width: 600px;width: 600px; height: 1200px; background: crimson; border-radius: 20px;">UNO</article>
+            <article style="width: 600px;width: 100px; height: 1200px; background: crimson;border-radius: 20px;">DOS</article>
+            <article style="width: 600px;width: 100px; height: 1200px; background: crimson;border-radius: 20px;">TRES</article>
+            <article style="width: 600px;width: 600px; height: 1200px; background: crimson; border-radius: 20px;">CUATRO</article>
+            <article style="margin: 0px;width: 600px;width: 2000px; height: 200px; background: rgb(230, 230, 110); border-radius: 1px;">CINCO</article>
+            <article style="margin: 0px;width: 2000px; height: 200px; background: rgb(230, 230, 110); border-radius: 1px;">SEIS <img src="imgs/tattoo-294387_1280.png"> </article>
+            <article>SIETE</article>
+            <article>OCHO</article>
+            <article>NUEVE</article>
+            <article>DIEZ</article>
+            <article>ONCE</article>
+        </section>
+        <footer>
+            <address>
+
+            </address>
+            <redes>
+
+            </redes>
+        </footer>
+    </div>
+</body>
+</html>

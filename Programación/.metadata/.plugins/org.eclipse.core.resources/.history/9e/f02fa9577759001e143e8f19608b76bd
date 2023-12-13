@@ -1,0 +1,19 @@
+package deberesTema2;
+
+import java.util.Scanner;
+
+public class _01_09_22Cafetería {
+
+	public static void main(String[] args) {
+	System.out.println("¿Qué tipo de café desea?"+"\n1.Americano"+"\n2. Capuccino"+"\n3. Latte");
+	Scanner caf= new Scanner(System.in);
+	int Cafe= caf.nextInt();
+	System.out.println("¿Desea algún extra?"+"\n1.Crema"+"\n2. Chocolate"+"\n3. No quiero ninguno");
+	Scanner xtra= new Scanner(System.in);
+	
+	calculos();
+	}
+public static void calculos(){
+	System.out.println();
+}
+}

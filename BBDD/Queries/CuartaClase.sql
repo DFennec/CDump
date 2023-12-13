@@ -1,0 +1,35 @@
+CREATE DATABASE JARDINERÍA;
+
+SELECT CodigoProducto as  Referencia,Nombre,Gama,PrecioVenta*1.21 as PVP FROM PRODUCTOS where Gama = "Herramientas"or Gama="Aromáticas";
+SELECT * FROM PRODUCTOS;
+SELECT Nombre,PrecioVenta-PrecioProveedor as Beneficio FROM PRODUCTOS;
+
+SELECT * FROM EMPLEADOS;
+SELECT NOMBRE, APELLIDO1, APELLIDO2, CONCAT_WS(" ",Apellido1,Apellido2,Nombre) AS Empleado 
+FROM EMPLEADOS ORDER BY Empleado limit 5;
+/* ORDER: ORDENA ALFABETICAMENTE SEGÚN EL CONTENIDO DEL CAMPO ESPECIFICADO */
+/* LIMIT: REDUCE EL TAMAÑO DE LA TABLA AL NÚMERO DE ENTRADAS QUE SE ESPECIFIQUE */
+
+SELECT CONCAT_WS(" ",NOMBRE,APELLIDO1,APELLIDO2) AS Nombre,EXTENSION, EMAIL,Puesto
+FROM EMPLEADOS WHERE Puesto="Representante Ventas";
+/* Elige las entradas que tengan un valor dado en un campo */
+
+SELECT UPPER(concat(LEFT(Nombre,2),LEFT(Apellido2,2),"-",EXTENSION)) as USUARIO, CodigoOficina
+FROM EMPLEADOS WHERE CodigoOficina="MAD-ES";
+SELECT * FROM EMPLEADOS;
+SELECT * FROM EMPLEADOS WHERE CodigoOficina LIKE "%-ES";
+/* LIKE: REGEX SIMPLIFICADO EN MYSQL */
+
+SELECT * 
+FROM PEDIDOS;
+
+SELECT DISTINCT(ESTADO)
+FROM PEDIDOS;
+SELECT *
+FROM PEDIDOS 
+WHERE ESTADO="Pediente";
+
+SELECT DATEDIFF(fechaesperada,fechapedido) AS Dias, CodigoPedido
+FROM PEDIDOS;
+SELECT ROUND(AVG(DATEDIFF(fechaesperada,fechapedido))) AS DiasDeEntregaPromedio, CodigoPedido
+FROM PEDIDOS;

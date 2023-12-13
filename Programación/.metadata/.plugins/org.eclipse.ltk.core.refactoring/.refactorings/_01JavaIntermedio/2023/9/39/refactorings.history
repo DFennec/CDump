@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;_06Lección.UpperLowerCase&apos; to &apos;UpperLowerCaseReplace&apos;&#x0D;&#x0A;- Original project: &apos;_01JavaIntermedio&apos;&#x0D;&#x0A;- Original element: &apos;_06Lección.UpperLowerCase&apos;&#x0D;&#x0A;- Renamed element: &apos;_06Lección.UpperLowerCaseReplace&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UpperLowerCase&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;_06Lección{UpperLowerCase.java[UpperLowerCase" matchStrategy="1" name="UpperLowerCaseReplace" qualified="false" references="true" similarDeclarations="false" stamp="1695744615727" textual="false" version="1.0"/>
+</session>

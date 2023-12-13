@@ -1,0 +1,16 @@
+package clase1;
+
+public class Date {
+	public Date(int day, int month, int year);
+	/*Constructor for Date that stores day, month and year.*/
+	public int getDay();
+	/*Header Method that attached to a Date object gets the day of that given Date.*/
+	public int getMonth();
+	/*Method that attached to a Date object gets the month of that given Date.*/
+	public int getYear();
+	/*Method that attached to a Date object gets the year of that given Date.*/
+	public void setDay(int day);
+	/*Method that attached to a Date object gets the day of that given Date.*/
+	public void setMonth(int month);
+	public void setYear(int year);
+}
