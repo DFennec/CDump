@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 3-2: Parámetros, funciones y bifurcaciones</title>
+</head>
+<body>
+    <label for="usuario">
+        <input type="text" id="usuario">
+    </label>
+    <label for="contraseña">
+        <input type="password" id="contraseña">
+    </label>
+    <hr>
+    <button onclick="acceder();">ACCESO</button>
+    <script>
+        function acceder(){
+            let usu=document.getElementById('usuario').value,
+                cla=document.getElementById('contraseña').value;
+            if(usu=='admin'&&cla==1234){
+                document.write("Acceso concedido");
+            }else{
+                document.write("Acceso denegado");
+                setTimeout(()=>{
+                    window.open('https://www.google.es');
+                },'2000')
+            }
+        }
+    </script>
+</body>
+</html>

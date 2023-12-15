@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript 2-2</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+        integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
-        console.log("JSOn")
+        function cEdit() {
+            let alto,
+            ancho,
+            color,
+            borde,
+            sombra;
+            alto = document.getElementById('alto').value + "%";
+            ancho = document.getElementById('ancho').value + "%";
+            color = document.getElementById('colorP').value;
+            borde = document.getElementById('borde').value + "px";
+            sombra = document.getElementById('sombra').value + "px";
+            document.getElementById('square').style.height = alto;
+            document.getElementById('square').style.width = ancho;
+            document.getElementById('square').style.backgroundColor = color;
+            document.getElementById('square').style.border = borde;
+            document.getElementById('square').style.boxShadow = sombra;
+        }
+        function bordeNo() {
+            document.getElementById('borde').disabled = true;
+        }
+        function bordeSi() {
+            document.getElementById('borde').disabled = false;
+        }
     </script>
 </head>
+
 <body style="margin: 3vh;">
     <div class="container" style="height: 100vh; width: 100vw;">
         <div class="row" style="display: flex; justify-content: center;">
-            <div class="row-md-12" >
+            <div class="row-md-12">
                 <div class="alert alert-primary text-center">
                     <h1>PROPIEDADES OBJETO JAVASCRIPT</h1>
-                  </div>
+                </div>
             </div>
-        <div class="col-md-6" style="display: flex; flex-flow: column wrap;">
-            <div class="row">
-                <div class="alert alert-warning text-center">
-                    <h2>SELECTOR</h2>
-                  </div>    
+            <div class="col-md-6" style="display: flex; flex-flow: column wrap;">
+                <div class="row"><div class="alert alert-warning text-center"><h2>SELECTOR</h2></div></div>
+                <div class="row">
+                    <label id="ancho" for="customRange1" class="form-label">Ancho del cuadrilátero</label>
+                    <input type="range" class="form-range" min="0" max="100" value="50" id="customRange1">
+                </div>
+                <div class="row">
+                    <label id="alto" for="customRange2" class="form-label">Alto del cuadrilátero</label>
+                    <input type="range" class="form-range" min="0" step="1" max="100" value="50" id="customRange2">
+                </div>
+                <div class="row" style="margin-bottom: 1vh; width: 100%;">
+                    <label id="colorP" for="CPicker" class="form-label">Color del cuadrilátero</label>
+                    <input type="color" class="form-control form-control-color" id="CPicker" value="#630202"title="Color del cuadrilátero" style="margin-bottom: 1vh; width: 100%;">
+                </div>
+                <div class="row" style="margin-bottom: 1vh;">Borde</div>
+                <div class="row"style="margin-bottom: 1vh; display: flex; justify-content: space-around; align-items: center;">
+                    <select id="bordeToggle" class="form-select" aria-label="BORDE" style="width: 45%; height: 90%;">
+                        <option selected value="0" style="text-align: center;" onclick="bordeSi()">SÍ</option>
+                        <option value="1" style="text-align: center;" onclick="bordeNo()">NO</option>
+                    </select>
+                    <input id="borde" type="number" min="0" step="0.5" value="0" max="10" style="width:45%; height: 90%;">
+                </div>
+                <div class="row" style="margin-bottom: 1vh;">Sombra</div>
+                <div class="row" style="margin-bottom: 1vh;">
+                    <select id="sombra" class="form-select" aria-label="SOMBRA">
+                        <option selected value="5" style="text-align: center;">PONER SOMBRA</option>
+                        <option value="0" style="text-align: center;">QUITAR SOMBRA</option>
+                    </select>
+                </div>
+                <div class="row"><button class="btn btn-primary" type="submit" onclick="cEdit()">ACTUALIZAR</button>
+                </div>
             </div>
-            <div class="row">
-                <label for="customRange1" class="form-label">Ancho del cuadrilátero</label>
-                <input type="range" class="form-range" min="0" max="1000" id="customRange1">
-            </div>
-            <div class="row">
-                <label for="customRange2" class="form-label">Alto del cuadrilátero</label>
-                <input type="range" class="form-range" min="0" max="1000" id="customRange2">
-            </div>
-            <div class="row" style="margin-bottom: 1vh; width: 100%;">
-                <label for="CPicker" class="form-label">Color del cuadrilátero</label>
-                <input type="color" class="form-control form-control-color" id="CPicker" value="#630202" title="Color del cuadrilátero" style="margin-bottom: 1vh; width: 100%;">
-            </div>
-            <div class="row" style="margin-bottom: 1vh;">Borde</div>
-            <div class="row" style="margin-bottom: 1vh;">
-                <select class="form-select" aria-label="BORDE">
-                    <option selected value="0" style="text-align: center;">SÍ</option>
-                    <option value="1" style="text-align: center;">NO</option>
-                </select>
-            </div>
-            <div class="row" style="margin-bottom: 1vh;">Sombra</div>
-            <div class="row" style="margin-bottom: 1vh;">
-                <select class="form-select" aria-label="SOMBRA">
-                    <option selected value="0" style="text-align: center;">PONER SOMBRA</option>
-                    <option value="1" style="text-align: center;">QUITAR SOMBRA</option>
-                </select>
-            </div>
-            <div class="row"><button class="btn btn-primary" type="submit" onclick=";">ACTUALIZAR</button></div>
-        </div>
             <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
-                <p id="square" style="width: 400px;height: 400px; background-color: rgb(99, 2, 2);"></p>
+                <p id="square" style="width: 50%;height: 50%; background-color: rgb(99, 2, 2);"></p>
             </div>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,0 +1,52 @@
+package clase1;
+
+public class DClases {
+	public class Book{
+	private String title;
+	private String author;
+	private String id;
+	private boolean lent;
+	public Book (String title,String author,String id) {
+		this.author=author;
+		this.title=title;
+		this.id=id;
+		this.lent=false;
+	}
+	public void bookLend() {
+		this.lent=true;
+	}
+	public void bookReturn() {
+		this.lent=false;
+	}
+	public void bookStatus() {
+		if (this.lent==true) {
+			System.out.println(this.title+" - Lent");
+		}else {
+			System.out.println(this.title+" - In library");
+		}
+	}
+	public void getAuthor(){
+		System.out.println(this.title+" - Author: "+this.author);
+	}
+	public void getId(){
+		System.out.println(this.title+" - ID: "+this.id);
+	}
+	public void getTitle(){
+		System.out.println(this.id+" - Title: "+this.title);
+	}
+	}
+	public class Clock{
+		private int hour;
+		private int minutes;
+		private int seconds;
+		public Clock (int hour, int minutes, int seconds) {
+			this.hour=hour;
+			this.minutes=minutes;
+			this.seconds=seconds;
+		}
+		public void getTime(){
+			System.out.println(hour+":"+""+":"+);
+		}
+		
+	}
+}

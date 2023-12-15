@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 3: Parámetros, funciones y bifurcaciones</title>
+</head>
+<body>
+    <!-- <p id="resultado" onclick="this.innerHTML=sumar(20,10);" style="width: 1VW; height: 1VH;">SUMA</p>-->
+<<<<<<< HEAD
+    <button onclick="document.getElementById('resultado').innerHTML=sumar()">suma</button>
+    <p id="resultado"></p>
+    <label  for="pon un numero">
+    <input id="n1" type="number" min="0">
+    </label>
+    <label for="pon un numero">
+    <input id="n2" type="number" min="0">
+=======
+    <p onclick="document.getElementById('resultado').innerHTML=sumar(20,10)">suma</p>
+    <p id="resultado"></p>
+    <label for="pon un numero">
+    <input type="number" min="0">
+    </label>
+    <label for="pon un numero">
+    <input type="number" min="0">
+>>>>>>> 42aa44ca99fffad72dbeb2e1af12ca8d61a4d660
+    </label>
+    <script>
+        /*a y b son parámetros dentro de la función sumar. Si les introducimos un valor, como 10 y 20,
+        10 y 20 son argumentos.*/
+<<<<<<< HEAD
+        function sumar(){
+            let numero1=document.getElementById('n1').value;
+            let numero2=document.getElementById('n2').value;
+            return parseInt(numero1)+parseInt(numero2);
+=======
+        let numero1,
+            numero2;
+        function sumar(a,b){
+            return a+b;
+>>>>>>> 42aa44ca99fffad72dbeb2e1af12ca8d61a4d660
+        }
+    </script>
+</body>
+</html>
