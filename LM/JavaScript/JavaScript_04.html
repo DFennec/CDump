@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de JavaScript 4 - </title>
+</head>
+<body>
+    <h2 id="RESULTADO"></h2>
+    <br>
+    <br>
+    <br>
+    <p id="SALIDA"></p>
+    <br>
+    <p id="SALIDA2"> </p>
+    <br>
+    <p id="SALIDA3"></p>
+    <br>
+    <p id="SALIDA4"></p>
+    <br>
+    <p id="SALIDA5"></p>
+    <script>
+        let cadena="El resultado es: ";
+        let longitud=(100/(75+23));
+        let frase='EL AMOR EN ROMA';
+        let alumnos = ['Ana','Pedro','Carlos','Lola'];
+        let edades = ['23','18','27','19','100'];
+        let a=50;
+        let b=20;
+        let lista=alumnos.concat(edades);
+        function suma(num1,num2){
+            return num1+num2;
+        }
+    document.getElementById("RESULTADO").innerHTML=cadena+longitud.toFixed(2); /* Trunca a 2 decimales */
+    document.getElementById("SALIDA").innerHTML=frase.split('').reverse().join('');
+    document.getElementById("SALIDA2").innerHTML=edades.pop();
+    document.getElementById("SALIDA3").innerHTML=suma(10,20);
+    document.getElementById("SALIDA4").innerHTML=lista.join(', ');
+    document.getElementById("SALIDA5").innerHTML='<strong>'+frase+'</strong>';
+    </script>
+</body>
+</html>

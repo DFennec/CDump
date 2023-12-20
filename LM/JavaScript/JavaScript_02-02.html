@@ -8,31 +8,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
         integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+.rainbow-bg{
+		animation: rainbow-bg 2.5s linear;
+		animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+		100%,0%{
+			border-color: rgb(255,0,0);
+		}
+		8%{
+			border-color:rgb(255,127,0);
+		}
+		16%{
+			border-color: rgb(255,255,0);
+		}
+		25%{
+			border-color: rgb(127,255,0);
+		}
+		33%{
+			border-color: rgb(0,255,0);
+		}
+		41%{
+			border-color: rgb(0,255,127);
+		}
+		50%{
+			border-color: rgb(0,255,255);
+		}
+		58%{
+			border-color: rgb(0,127,255);
+		}
+		66%{
+			border-color: rgb(0,0,255);
+		}
+		75%{
+			border-color: rgb(127,0,255);
+		}
+		83%{
+			border-color: rgb(255,0,255);
+		}
+		91%{
+			border-color: rgb(255,0,127);
+		}
+}
+    </style>
     <script>
         function cEdit() {
             let alto,
-        let alto,
             ancho,
             color,
             borde,
+            tborde,
             sombra;
-        function cEdit() {
-            alto = document.getElementById('alto').value + "%";
-            ancho = document.getElementById('ancho').value + "%";
-            color = document.getElementById('colorP').value;
-            borde = document.getElementById('borde').value + "px";
-            sombra = document.getElementById('sombra').value + "px";
+            alto = document.getElementById('customRange2').value + "%";
+            ancho = document.getElementById('customRange1').value + "%";
+            color = document.getElementById('CPicker').value;
+            borde = document.getElementById('bordeTamaño').value + "px";
+            sombra = document.getElementById('sombra').value;
+            tborde = document.getElementById('bordeToggle').value;
             document.getElementById('square').style.height = alto;
             document.getElementById('square').style.width = ancho;
             document.getElementById('square').style.backgroundColor = color;
-            document.getElementById('square').style.border = borde;
-            document.getElementById('square').style.boxShadow = sombra;
-        }
-        function bordeNo() {
-            document.getElementById('borde').disabled = true;
-        }
-        function bordeSi() {
-            document.getElementById('borde').disabled = false;
+            if (sombra==1){
+                document.getElementById('square').style.boxShadow = "5px 5px 5px black";
+            }else{
+                document.getElementById('square').style.boxShadow = "0px 0px 0px white";
+            }
+            if (tborde==1){
+                document.getElementById('square').className = "rainbow-bg";
+                document.getElementById('square').style.border = borde;
+                document.getElementById('square').style.borderStyle = "dashed";
+            }else{
+                document.getElementById('square').style.border = "0px";
+            }
+            
         }
     </script>
 </head>
@@ -49,11 +99,11 @@
                 <div class="row"><div class="alert alert-warning text-center"><h2>SELECTOR</h2></div></div>
                 <div class="row">
                     <label id="ancho" for="customRange1" class="form-label">Ancho del cuadrilátero</label>
-                    <input type="range" class="form-range" min="0" max="100" value="50" id="customRange1">
+                    <input type="range" class="form-range" min="1" max="100" value="50" id="customRange1">
                 </div>
                 <div class="row">
                     <label id="alto" for="customRange2" class="form-label">Alto del cuadrilátero</label>
-                    <input type="range" class="form-range" min="0" step="1" max="100" value="50" id="customRange2">
+                    <input type="range" class="form-range" min="1" step="1" max="100" value="50" id="customRange2">
                 </div>
                 <div class="row" style="margin-bottom: 1vh; width: 100%;">
                     <label id="colorP" for="CPicker" class="form-label">Color del cuadrilátero</label>
@@ -62,15 +112,15 @@
                 <div class="row" style="margin-bottom: 1vh;">Borde</div>
                 <div class="row"style="margin-bottom: 1vh; display: flex; justify-content: space-around; align-items: center;">
                     <select id="bordeToggle" class="form-select" aria-label="BORDE" style="width: 45%; height: 90%;">
-                        <option selected value="0" style="text-align: center;" onclick="bordeSi()">SÍ</option>
-                        <option value="1" style="text-align: center;" onclick="bordeNo()">NO</option>
+                        <option selected value="1" style="text-align: center;">SÍ</option>
+                        <option value="0" style="text-align: center;">NO</option>
                     </select>
-                    <input id="borde" type="number" min="0" step="0.5" value="0" max="10" style="width:45%; height: 90%;">
+                    <input id="bordeTamaño" type="number" min="0" step="0.5" value="0" max="10" style="width:45%; height: 90%;">
                 </div>
                 <div class="row" style="margin-bottom: 1vh;">Sombra</div>
                 <div class="row" style="margin-bottom: 1vh;">
                     <select id="sombra" class="form-select" aria-label="SOMBRA">
-                        <option selected value="5" style="text-align: center;">PONER SOMBRA</option>
+                        <option selected value="1" style="text-align: center;">PONER SOMBRA</option>
                         <option value="0" style="text-align: center;">QUITAR SOMBRA</option>
                     </select>
                 </div>
