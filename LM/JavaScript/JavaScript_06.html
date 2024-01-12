@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 6 - JSONs</title>
+</head>
+<body onload="chart()">
+    <p id="salida"></p>
+    <p id="salida2"></p>
+    <p id="salida3"></p>
+    <script>
+        /*
+        let fic={nombre:'Pedrito',telefono:'+34650230112'} //NOT AN ACTUAL JSON, JUST A SET OF VALUES + KEYS
+        const cadena=fic;
+            document.getElementById('salida').innerHTML=fic.nombre+" "+cadena.telefono;
+        */
+        let fichero='{"alumnos":[{"nombre":"Andrés","apellidos":"Torres Málaga"},{"nombre":"Daniel","apellidos":"Pacheco Valero","telefono":"+34666666666"},{"nombre":"Carmen","apellidos":"Sánchez Pérez"}]}';
+        const datos=JSON.parse(fichero);
+        function chart(){
+            let idx=0;
+            /*
+            while (idx < datos.alumnos.length){
+            if (datos.alumnos[idx].telefono !== undefined)
+             document.getElementById('salida2').innerHTML=document.getElementById('salida2').innerHTML+" "+datos.alumnos[idx].nombre+" "+datos.alumnos[idx].apellidos+" "+datos.alumnos[idx].telefono;
+             idx++;
+            }
+            */
+            let risu='{"ken":[{"namae":[{"1":"Suou","2":"Niigata"}],"honjitsu":"Yamaguchi"},{"namae":"Saga","honjitsu":"Saga"},{"namae":"Honma","honjitsu":"Aomori"}]}';
+            const basho=JSON.parse(risu);
+            while (idx < basho.ken.length){
+             document.getElementById('salida3').innerHTML=document.getElementById('salida3').innerHTML+" "+basho.ken[idx].namae+" "+basho.ken[idx].honjitsu;
+             idx++;
+            }
+        }
+    </script>
+</body>
+</html>

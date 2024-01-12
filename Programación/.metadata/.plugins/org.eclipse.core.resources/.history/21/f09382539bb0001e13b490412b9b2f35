@@ -1,0 +1,53 @@
+package clase1;
+
+public class Ejercicio1_09_01_2024 {
+	public class Empleado{
+		private String id;
+		private String nombre;
+		private boolean acceso;
+		private static int empleadosDentro;
+		
+		public Empleado(String id, String nombre) {
+			this.id=id;
+			this.nombre=nombre;
+			this.acceso=false;
+		}
+		//getters
+		public int getEmpleadosDentro(){
+			return empleadosDentro;
+		}
+		public String getId(){
+			return this.id;
+		}
+		public String getNombre(){
+			return this.nombre;
+		}
+		public boolean getAcceso(){
+			return "Dentro.";
+			return "Fuera.";
+		}
+		//setters
+		public void setNombre(String nombre){
+			this.nombre=nombre;
+		}
+		public void setId(String id){
+			this.id=id;
+		}
+		//métodos
+		public void Salir() {
+			if (this.acceso!=false) {
+				this.acceso=false;
+				empleadosDentro--;
+			}
+		}
+		public void Entrar() {
+			if (this.acceso!=true) {
+				this.acceso=true;
+				empleadosDentro++;
+			}
+		}
+	}//EmpleadoClass
+	Empleado Carlos = new Empleado("CC7501","Carlos García");
+	Empleado Maria = new Empleado("CC7502","María de Lotaringuia");
+	María.Entrar();
+}//EjClass

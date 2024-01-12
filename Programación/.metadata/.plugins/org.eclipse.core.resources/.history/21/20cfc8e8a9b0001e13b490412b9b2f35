@@ -1,0 +1,11 @@
+package clase_11_01_2024;
+
+public enum EstadoPedido{
+
+	private String codigo;
+	private String descripcion;
+	private EstadoPedido(String codigo, String descripcion) {
+		this.codigo=codigo;
+		this.descripcion=descripcion;
+	}
+	}

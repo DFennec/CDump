@@ -1,0 +1,10 @@
+package clase_11_01_2024;
+
+public enum EstadoPedido{
+		PENDIENTE("01","Falta algo"), PROCESADO, ENVIADO, ENTREGADO;
+	private String codigo;
+	private String descripcion;
+	private EstadoPedido(String codigo, String descripcion) {
+		
+	}
+	}

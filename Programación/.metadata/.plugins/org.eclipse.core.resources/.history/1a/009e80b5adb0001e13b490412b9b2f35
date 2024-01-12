@@ -1,0 +1,33 @@
+package clase_11_01_2024;
+
+public class Pedido {
+	private static int cId=100;
+	private int id;
+	private String cliente;
+	private EstadoPedido estado;
+	public Pedido(String cliente) {
+		this.cliente=cliente;
+		this.id=cId++;
+		this.estado=;
+	}
+	public void avanzarFase() {
+		System.out.println("El pedido estaba: "+ this.estado);
+		if (this.estado=PENDIENTE) {
+			this.estado=PROCESADO;
+		}else if (this.estado=PROCESADO){
+			this.estado=ENVIADO;
+		}else{
+			this.estado=ENTREGADO;
+		}
+		System.out.println("El pedido está: "+ this.estado);
+	}
+	public EstadoPedido getEstado() {
+		return this.estado;
+	}
+	public int getId() {
+		return this.id;
+	}
+	public String getCliente() {
+		return this.cliente;
+	}
+}

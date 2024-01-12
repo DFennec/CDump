@@ -55,5 +55,4 @@ public class CuentaBancaria {
 		}
 	}
 	CuentaBancaria cuentaA = new CuentaBancaria();
-	cuentaA.setNumeroCuenta('23423CAC');
 }

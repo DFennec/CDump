@@ -1,0 +1,5 @@
+package clase_11_01_2024;
+
+public enum EstadoPedido{
+		PENDIENTE, PROCESADO, ENVIADO, ENTREGADO
+	}

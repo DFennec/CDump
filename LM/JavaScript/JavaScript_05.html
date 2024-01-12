@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de JavaScript 5: Arrays </title>
+</head>
+<style>
+    .rainbow-bg{
+		animation: rainbow-bg 2.5s linear;
+		animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+		100%,0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color:rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+</style>
+<body style="background-image: url(https://openseauserdata.com/files/781a5128e733c6a36aa6a10814e19548.gif); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <input type="text" id="texto">
+    <button id="añadir" onclick="AÑADIR()">AÑADIR</button>
+    <button id="añadir" onclick="IMPRIMIR()">IMPRIMIR</button>
+    <p id="salida" class="rainbow-bg"></p>
+    <p id="edades"></p>
+    <script>
+        let contenido=[];
+        let edad=[10,18,22,45,67];
+        let idx=0;
+        while (idx<edad.length){
+            document.getElementById("edades").innerHTML=document.getElementById("edades").innerHTML+edad[idx]+"<br>";
+            idx=idx+1
+        }
+        function AÑADIR(){
+            let datos=document.getElementById('texto').value;
+            
+            if (datos.length==0){
+                alert('Error: no has introducido datos')
+            }else{
+                contenido.push(" "+datos.toUpperCase());
+            }
+            document.getElementById('texto').value="";
+        }
+        function IMPRIMIR(){
+            let indice=0
+            while (indice<contenido.length){
+            document.getElementById('salida').innerHTML=document.getElementById("salida").innerHTML+contenido[indice]+" - INDICE: "+indice+"<br>";
+            indice=indice+1;
+            }
+        }
+    </script>
+</body>
+</html>
