@@ -1,0 +1,16 @@
+package tareaLibreríaNotablementeMejorada;
+import java.util.ArrayList;
+public class Biblioteca {
+	private Libro titulo;
+	private String nombreBiblioteca;
+	public Biblioteca(String nombreBiblioteca) {
+		this.nombreBiblioteca=nombreBiblioteca;
+		ArrayList<String> cars = new ArrayList<String>();
+	}
+	public void guardarLibro(Libro titulo) {
+		
+	}
+	public void eliminarLibro(Libro titulo) {
+		this.nombreBiblioteca.remove(titulo);
+	}
+}

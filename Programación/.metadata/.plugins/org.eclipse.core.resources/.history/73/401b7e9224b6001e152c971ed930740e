@@ -1,0 +1,14 @@
+package tareaLibreríaNotablementeMejorada;
+import java.util.ArrayList;
+public class Biblioteca {
+	private Libro titulo;
+	private String nombreBiblioteca;
+	public Biblioteca(String nombreBiblioteca) {
+	}
+	public void guardarLibro(Libro titulo) {
+		
+	}
+	public void eliminarLibro(Libro titulo) {
+		Biblioteca.remove(titulo);
+	}
+}

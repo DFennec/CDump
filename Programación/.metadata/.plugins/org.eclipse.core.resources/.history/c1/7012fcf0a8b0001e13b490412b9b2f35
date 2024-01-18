@@ -1,7 +1,0 @@
-package clase_11_01_2024;
-
-public class EstadoPedido {
-public enum Estados{
-		PENDIENTE(01), PROCESADO, ENVIADO, ENTREGADO
-	}
-}

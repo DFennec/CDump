@@ -1,0 +1,20 @@
+package paquete;
+
+public class Vehiculo {
+<<<<<<< HEAD
+	public static void arrancar() {
+	System.out.println("Brr... ¡Acaba de arrancar!");	
+ }
+	public static void main (String [] args) {
+	arrancar();
+ }
+}//class
+=======
+	public Vehiculo() {
+		System.out.println("Brr... ¡Acaba de arrancar!");
+	}
+	public static void main (String [] args) {
+		Vehiculo miMoto = new Vehiculo();
+	}
+}
+>>>>>>> tlf2

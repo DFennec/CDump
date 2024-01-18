@@ -1,0 +1,9 @@
+package paquete;
+
+public class Vehiculo {
+
+	public Vehiculo() {
+		System.out.println("Brr... ¡Acaba de arrancar!");
+
+}
+}

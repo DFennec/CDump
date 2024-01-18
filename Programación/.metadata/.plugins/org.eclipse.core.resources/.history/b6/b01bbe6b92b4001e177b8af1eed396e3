@@ -1,0 +1,8 @@
+package tareaLibrería;
+
+public class ListaUsuarios {
+	private ArrayList lista;
+	public ListaUsuarios(ArrayList lista) {
+		this.lista=;
+	}
+}

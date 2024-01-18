@@ -1,0 +1,10 @@
+package paquete;
+
+public class Vehiculo {
+	public static void main (String [] args) {
+		arrancar();
+	}
+public static void arrancar() {
+	System.out.println("Brr... ¡Acaba de arrancar!");	
+ }
+}//class

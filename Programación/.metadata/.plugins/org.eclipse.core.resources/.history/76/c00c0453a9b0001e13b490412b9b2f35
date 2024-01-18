@@ -1,5 +1,0 @@
-package clase_11_01_2024;
-
-public enum EstadoPedido{
-		PENDIENTE("01","Falta algo"), PROCESADO("02","Queda enivarlo"), ENVIADO, ENTREGADO
-	}
