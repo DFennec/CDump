@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 7 - Creación JS: elementos e hijos</title>
+</head>
+<body onload="lectura()">
+    <h2 id="datos"></h2>
+    <h2 id="datosAPI"></h2>
+    <script>//Los json y el index.html se deben meter en xampp para que funcionen conectados a internet al consultar apis en URLS
+        function lectura(){
+            let idx=0;
+            fetch('gente.json')
+            .then(function(response){
+                console.log('Lectura: ok');
+                return response.json();
+            })
+        .then(function(lecturajson){
+            while (idx < lecturajson.amigos.length){
+            document.getElementById('datos').innerHTML=document.getElementById('datos').innerHTML+"<br>"+" "+lecturajson.amigos[idx].nombre+" "+lecturajson.amigos[idx].Edad+" "+lecturajson.amigos[idx].mascotas;
+
+            idx++;
+            }
+        })
+    }
+    </script>
+</body> 
+</html>

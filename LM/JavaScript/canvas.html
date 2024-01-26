@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+
+    <canvas id="lienzo" width="1000px" height="500px">
+        
+    </canvas>
+    <script>
+        let canvas=document.querySelector("#lienzo");
+        let ctx=canvas.getContext("2d");
+        ctx.lineWidth=3;
+        ctx.strokeStyle="Green";
+        ctx.rect(100,10,300,400);
+        ctx.rect(150,80,200,200);
+        ctx.rect(250,180,10,10);
+        ctx.rect(0,0,1000,500);
+        ctx.strokeStyle="Black";
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(300,300,80,0,2*Math.PI);
+        ctx.fillStyle="Green";
+        ctx.fill();
+        ctx.lineWidth=2;
+        ctx.strokeStyle="Blue";
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0,500);
+        ctx.lineTo(200,200);
+        ctx.moveTo(0,500);
+        ctx.lineTo(500,0);
+        ctx.moveTo(0,500);
+        ctx.lineTo(300,150);
+        ctx.moveTo(500,0);
+        ctx.lineTo(300,0);
+        ctx.lineWidth=12;
+        ctx.stroke();
+    </script>
+</body>
+</html>

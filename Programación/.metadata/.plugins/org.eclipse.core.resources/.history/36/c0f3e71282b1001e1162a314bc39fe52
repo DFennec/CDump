@@ -1,7 +1,0 @@
-package clase_12_01_2024_enumsAv;
-import java.util.ArrayList;
-public enum Mes {
-	ENERO(int[] dEnero={});
-	private int[] dia;
-	
-}

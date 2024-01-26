@@ -1,0 +1,7 @@
+package tareaRestaurante;
+public class Mesa {
+	private int numero;
+	public Mesa() {
+		
+	}
+}

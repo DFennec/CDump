@@ -1,6 +1,0 @@
-package tareaLibrería;
-
-public class ListaUsuarios {
-	private String nombre;
-	public ListaUsuarios
-}

@@ -11,6 +11,5 @@ public class Main {
 		biblioteca1.guardarLibro(libro2);
 		biblioteca1.guardarLibro(libro3);
 		biblioteca1.eliminarLibro(libro1);
-		biblioteca1.consultarLibros();
 	}
 }//class

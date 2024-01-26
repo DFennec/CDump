@@ -16,9 +16,6 @@ public class Biblioteca {
 	public void eliminarLibro(Libro titulo) {
 		this.Libros.remove(titulo);
 	}
-	public ArrayList consultarLibros() {
-		return this.Libros;
-	}
 	public int consultarCodigo() {
 		return this.code;
 	}

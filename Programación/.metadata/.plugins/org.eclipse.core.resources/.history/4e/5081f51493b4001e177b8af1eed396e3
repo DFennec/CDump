@@ -1,8 +1,0 @@
-package tareaLibrería;
-import java.util.ArrayList;
-public class ListaUsuarios {
-	private ArrayList lista;
-	public ListaUsuarios(ArrayList lista) {
-		this.lista=lista;
-	}
-}

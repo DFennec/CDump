@@ -1,0 +1,16 @@
+package tipoExamen;
+
+public class Libros {
+	private String titulo;
+	private String autor;
+	private int stock;
+	private Categoria categoria;
+public Libros(String titulo, String autor, Categoria categoria) {
+	this.titulo=titulo;
+	this.autor=autor;
+	this.categoria=categoria;
+}
+public (){
+	
+}
+}//class

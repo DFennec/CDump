@@ -1,0 +1,9 @@
+package tareaRestaurante;
+
+import java.util.ArrayList;
+
+public class MainRestaurante {
+	public static void main(String[] args) {
+		ArrayList<Reserva> reservasRestaurante = new ArrayList<Reserva>(); 
+	}//main
+}//class

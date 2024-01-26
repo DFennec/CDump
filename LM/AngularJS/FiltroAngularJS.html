@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro AngularJS (no Angular normal)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<style>
+.rainbow-bg{
+
+		animation: rainbow-bg 2.5s linear;
+		animation-iteration-count: infinite;
+}
+
+
+@keyframes rainbow-bga{
+		100%,0%{
+			box-shadow: 4px 4px rgb(255,0,0);
+		}
+		8%{
+			box-shadow: 4px 4px rgb(255,127,0);
+		}
+		16%{
+			box-shadow: 4px 4px rgb(255,255,0);
+		}
+		25%{
+			box-shadow: 4px 4px rgb(127,255,0);
+		}
+		33%{
+			box-shadow: 4px 4px rgb(0,255,0);
+		}
+		41%{
+			box-shadow: 4px 4px rgb(0,255,127);
+		}
+		50%{
+			box-shadow: 4px 4px rgb(0,255,255);
+		}
+		58%{
+			box-shadow: 4px 4px rgb(0,127,255);
+		}
+		66%{
+			box-shadow: 4px 4px rgb(0,0,255);
+		}
+		75%{
+			box-shadow: 4px 4px rgb(127,0,255);
+		}
+		83%{
+			box-shadow: 4px 4px rgb(255,0,255);
+		}
+		91%{
+			box-shadow: 4px 4px rgb(255,0,127);
+		}
+}
+@keyframes rainbow-bg{
+		100%,0%{
+			color:   rgb(255,0,0);
+		}
+		8%{
+			color:   rgb(255,127,0);
+		}
+		16%{
+			color:   rgb(255,255,0);
+		}
+		25%{
+			color:   rgb(127,255,0);
+		}
+		33%{
+			color:   rgb(0,255,0);
+		}
+		41%{
+			color:   rgb(0,255,127);
+		}
+		50%{
+			color:   rgb(0,255,255);
+		}
+		58%{
+			color:   rgb(0,127,255);
+		}
+		66%{
+			color:   rgb(0,0,255);
+		}
+		75%{
+			color:   rgb(127,0,255);
+		}
+		83%{
+			color:   rgb(255,0,255);
+		}
+		91%{
+			color:   rgb(255,0,127);
+		}
+}
+    .A{
+        animation: rainbow-bg 2.5s linear;
+		animation-iteration-count: infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #personas{
+		animation: rainbow-bga 2.5s linear;
+		animation-iteration-count: infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: gray;
+        width: 45vw;
+        height: 12vh;
+    }
+</style>
+<body ng-app>
+    <br><br>
+    <div ng-init="personas=[
+        {nombre:'Iván', edad:20},
+        {nombre:'Carmela', edad:21},
+        {nombre:'Pedro', edad:41},
+        {nombre:'Ana', edad:32}
+        ]">
+        <div>
+            <label> Filtro dinámico </label>
+            <input type="text" ng-model='filtro'>
+        </div><br>
+        <div class="A" ng-repeat="persona in personas | filter:{nombre:filtro}" ng-init="indice=$index">
+           <p class="rainbow-bg" id="personas">{{indice+1}}<br>{{persona.nombre}}<br>{{persona.edad}}</p>
+        </div>
+    </div>
+</body>
+</html>

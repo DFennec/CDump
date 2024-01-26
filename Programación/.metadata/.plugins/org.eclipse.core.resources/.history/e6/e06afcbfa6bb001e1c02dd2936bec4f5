@@ -1,0 +1,6 @@
+package tipoExamen;
+
+public class Libros {
+	private String titulo;
+
+}//class

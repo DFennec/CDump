@@ -1,7 +1,0 @@
-package clase_12_01_2024_enumsAv;
-
-public enum Mes {
-	ENERO(ArrayList<int>dia=new ArrayList<int>());
-	private int dia;
-	
-}
