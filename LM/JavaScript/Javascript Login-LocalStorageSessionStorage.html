@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Login</title>
+    <style>
+        input{
+            margin-top: 1vh;
+            margin-left: 1vw;
+            margin-bottom: 1vh;
+        }
+        button{
+            margin-right: 1vw;
+            margin-left: 1vw;
+        }
+        #cubito{
+            border: 1px solid rgb(196, 11, 11);
+            padding: 1vh;
+            text-align: center;
+            width: 500px;
+            height: 100px;
+        }
+        body{
+            height: 98vh;
+            width: 98vw;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="cubito">
+    <span>Usuario:</span>
+    <input type="text" placeholder="Usuario" id="usuario">
+    <br>
+    <span>Contraseña:</span>
+    <input type="password" placeholder="Contraseña" id="contraseña">
+    <br>
+    <span><button onclick="enviar()">Entrar</button>     <button>Borrar</button></span>
+    </div>
+    <br>
+    <p id="A TOPE" style="font-size: 5vh;"></p>
+    <script>
+        localStorage.setItem("usuario","pepe");
+        localStorage.setItem("contraseña","1234");
+        function logIn(){
+            if (sessionStorage.getItem("usuario")==localStorage.getItem("usuario")){
+            console.log("Usuario encontrado")
+            if (sessionStorage.getItem("contraseña")==localStorage.getItem("contraseña")){
+                console.log("Contraseña correcta")
+                document.getElementById("cubito").remove();
+                document.getElementById("A TOPE").innerHTML=sessionStorage.getItem("usuario")+" A TOPE";
+            }else{
+                console.log("Contraseña incorrecta");
+            }
+        }else{
+            console.log("Usuario no encontrado")
+        }
+        }
+
+        function enviar(){
+        let usuarioInput=document.getElementById("usuario").value;
+        let contraseñaInput=document.getElementById("contraseña").value;    
+        sessionStorage.setItem("usuario",usuarioInput);
+        sessionStorage.setItem("contraseña",contraseñaInput);
+        logIn();
+        }
+    </script>
+</body>
+</html>

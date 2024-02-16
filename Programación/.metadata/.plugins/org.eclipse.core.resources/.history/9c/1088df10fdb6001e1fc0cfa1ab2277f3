@@ -1,7 +1,0 @@
-package tareaRestaurante;
-
-public class Mesa {
-	public Mesa() {
-		
-	}
-}

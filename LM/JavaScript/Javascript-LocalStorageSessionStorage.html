@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Local Storage y Session Storage</title>
+</head>
+<body>
+    <p id="LOCAL"></p>
+    <br>
+    <p id="SESSION"></p>
+    <script>
+    /*
+    localStorage.setItem("usuario","manolín");
+    sessionStorage.setItem("amigo","armando camorra");
+    A pesar de no estar declaradas, la variable local se almacena permanentemente en el buscador,
+    por lo que, incluso si la comentas como aquí, la variable local sí seguirá 
+    existiendo y estando disponible.*/
+    let leerUsuarios=localStorage.getItem("usuario");
+    console.log(leerUsuarios);
+    document.getElementById("LOCAL").innerHTML=leerUsuarios;
+    document.getElementById("SESSION").innerHTML=sessionStorage.getItem("amigo");
+    localStorage.removeItem("usuario")/*para borrar las variables locales hay que hacer esto*/
+    </script>
+</body>
+</html>

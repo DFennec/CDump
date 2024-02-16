@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body onload="inicializar()">
+    <canvas id="canvas" width="750px" height="500px" style="
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgb(32, 16, 16);
+"></canvas>
+    <script>
+        let canvas;
+        let ctx;
+        const fps = 50;
+
+        const ancho = 50;
+        const alto = 50;
+
+        const muro = "#027ce7";
+        const puerta = "#006d77";
+        const tierra = "#a87438";
+        const llave = "#ffbe0b";
+
+        let protagonista;
+
+        //0 = muro
+        //1 = tierra
+        //2 = llave
+        //3 = puerta
+
+        const escenario = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 3, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+            [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+           
+        ];
+
+        function drawEscenario() {
+            let color;
+            for (let i = 0; i < escenario.length; i++) {
+                for (let j = 0; j < escenario[i].length; j++) {
+
+                    switch (escenario[i][j]) {
+                        case 0:
+                            color = muro;
+                            break;
+                        case 1:
+                            color = tierra;
+                            break;
+                        case 2:
+                            color = llave;
+                            break;
+                        case 3:
+                            color = puerta;
+                            break;
+                    }
+
+                    
+                    drawCasilla(j, i, color);
+                }
+            }
+        }
+
+
+        function inicializar() {
+            canvas = document.querySelector("#canvas");
+            ctx = canvas.getContext("2d");
+
+            let jugador = function (){
+            this.x=1;
+            this.y=1;
+            this.color=green;
+            this.dibuja=function(){
+                ctx.fillStyle=this.color;
+                ctx.fillRect(this.x*ancho,this.y*alto,ancho,alto);
+            }
+            this.margenes=function(x,y){
+                let colision=false;
+                if (escenario[y][x]==0){
+                    colision=true;
+                }
+                return colision;
+            }
+            this.arriba=function(){
+                if(this.margenes(this.x,(this.y-1))==false){
+                    this.y--;
+                }
+            }
+            this.abajo=function(){
+                if(this.margenes(this.x,(this.y+1))==false){
+                    this.y++;
+                }
+            }
+            this.izquierda=function(){
+                if(this.margenes((this.x-1),this.y)==false){
+                    this.x--;
+                }
+            }
+            this.derecha=function(){
+                if(this.margenes((this.x+1),this.y)==false){
+                    this.x++;
+                }
+            }
+        }
+        protagonista=new jugador();
+        document.addEventListener('keydown',function(tecla){
+            if(tecla.keyCode==38){
+                protagonista.arriba();
+            }
+            if(tecla.keyCode==40){
+                protagonista.abajo();
+            }
+            if(tecla.keyCode==39){
+                protagonista.derecha();
+            }
+            if(tecla.keyCode==37){
+                protagonista.izquierda();
+            }
+        });
+            setInterval(function () {
+                principal();
+            }, 1000 / fps);
+        }
+
+        function drawCasilla(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x * ancho, y * alto, ancho, alto);
+        }
+
+        function clear() {
+            canvas.width = 750;
+            canvas.height = 500;
+        }
+
+        function principal() {
+            clear();
+            drawEscenario();
+            protagonista.dibuja(); 
+        }
+    </script>
+</body>
+
+</html>

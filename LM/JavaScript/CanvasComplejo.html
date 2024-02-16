@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Complejo</title>
+</head>
+<style>
+    #canvas{
+        border: 2px solid blue;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <canvas id="canvas" width="1000px" height="700px">
+        
+    </canvas>
+    <script>
+        const canvas=document.getElementById("canvas");
+        const ctx=canvas.getContext("2d");
+        const dtx=canvas.getContext("2d");
+        const ltx=canvas.getContext("2d");
+        const gradA=ctx.createLinearGradient(150,300,100,170);
+        const gradB=ctx.createLinearGradient(0,0,750,0);
+        gradA.addColorStop(0,"purple");
+        gradA.addColorStop(0.2,"red");
+        gradA.addColorStop(0.4,"orange");
+        gradA.addColorStop(0.6,"yellow");
+        gradA.addColorStop(0.8,"green");
+        gradA.addColorStop(1,"blue");
+        gradB.addColorStop(0,"purple");
+        gradB.addColorStop(0.5,"yellow");
+        gradB.addColorStop(1,"blue");
+        let x=50;
+        let xb=850;
+        let y=50;
+        let yb=500;
+        const ancho=50;
+        const alto=50;
+        function dibujarCanvas(){
+            ctx.fillStyle=gradA;
+            ctx.fillRect(x,y,ancho,alto);
+            dtx.fillStyle=gradB;
+            dtx.fillRect(xb,yb,ancho*1.5,alto*2);
+        };
+        function limpiarCanvas(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            dtx.clearRect(0,0,canvas.width,canvas.height);
+        };
+        function actualizar(){
+            limpiarCanvas();
+            dibujarCanvas();
+        };
+        function mover(evento){
+            switch (evento.keyCode){
+                case 37://izquierda
+                    if(x>0){
+                        x-=10
+                    }   
+                    break;
+                case 39://derecha
+                    if(x+ancho<canvas.width){
+                        x+=10
+                    }
+                    break;
+                case 38: //arriba
+                    if(y>0){
+                        y-=10
+                    }
+                    break;
+                case 40://abajo
+                    if(y+alto<canvas.height){
+                        y+=10
+                    }
+                    break;
+            }
+            actualizar();
+        };
+        function moverB(eventoB){
+            switch (eventoB.keyCode){
+                case 65://izquierda
+                    if(xb>0){
+                        xb-=10
+                    } 
+                    break;
+                case 68://derecha
+                    if(xb+ancho<canvas.width){
+                        xb+=10
+                    }
+                    break;
+                case 87: //arriba
+                    if(yb>0){
+                        yb-=10
+                    }
+                    break;
+                case 83://abajo
+                    if(yb+alto<canvas.height){
+                        yb+=10
+                    }
+                    break;
+            }
+            actualizar();
+        };
+        window.addEventListener('keydown',mover);
+        window.addEventListener('keydown',moverB);
+        actualizar();
+    </script>
+</body>
+</html>

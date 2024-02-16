@@ -1,5 +1,0 @@
-package tipoExamen;
-
-public enum Categoria {
-	ficcion, no-ficcion, educativo
-}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Canvas tutorial MDN Docs</title>
+    <style>
+        canvas{
+            border: 5px outset rgb(128, 128, 128);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="firstcanvas" width="1000px" height="800px">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/d8d1ca48846521.5608429aa1c99.jpg" width="1000px" height="800px" alt="image in case of browser malfunction">
+    </canvas>
+    <script>
+        function draw(){
+        const canvas=document.getElementById("firstcanvas");
+        const context=canvas.getContext("2d");
+        window.addEventListener("load",draw);
+
+            context.fillStyle = "rgb(200 0 0)";
+            context.fillRect(10, 10, 50, 50);
+
+            context.fillStyle = "rgb(0 0 200 / 30%)";
+            context.fillRect(15, 15, 50, 50);
+
+            context.fillStyle = "rgb(128 128 128 / 10%)";
+            context.fillRect(100, 60, 100, 300);
+
+            fillRect(x, y, width, height)
+
+            strokeRect(x, y, width, height)
+
+            clearRect(x, y, width, height)
+        }
+        draw();
+    </script>
+</body>
+</html>
