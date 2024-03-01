@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Complejo</title>
+</head>
+<style>
+    #canvasjuego{
+        border: 10px solid blue;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <canvas id="canvasjuego" width="1000px" height="700px">
+        
+    </canvas>
+    <script>
+        const canvas=document.getElementById("canvasjuego");
+        const ctx=canvas.getContext("2d");
+        let jugador={
+            x:35,
+            y:700,
+            width:25,
+            height:25,
+            velx:0,
+            vely:0,
+            velocidad:5,
+            salto:false
+        };
+        let tilemap=new Image();
+        let suelo=new Image();
+        tilemap.src='Plataformas/tilemap.png';
+        suelo.src='Plataformas/tilemap.png'
+        let gravity=0.5;
+        let plataformas=[
+            {x:0,y:690,width:1000,height:32},
+            {x:50,y:600,width:32,height:32},
+            {x:100,y:550,width:32,height:32},
+            {x:200,y:450,width:32,height:32},
+            {x:800,y:200,width:200,height:100}
+        ];
+        function dibujar(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.drawImage(tilemap,32,32,32,32,jugador.x,jugador.y,jugador.width,jugador.height);
+            plataformas.forEach(plataforma=>{
+                ctx.drawImage(suelo,64,0,32,32,plataforma.x,plataforma.y,plataforma.width,plataforma.height);
+            });
+        };
+        function actualizar(){
+            jugador.vely+=gravity;
+            jugador.y+=jugador.vely;
+            plataformas.forEach(plataforma=>{
+                if(jugador.x<plataforma.x+plataforma.width
+                &&jugador.x+jugador.y>plataforma.x
+                &&jugador.y<plataforma.y+plataforma.height
+                &&jugador.y+jugador.height>plataforma.y){
+                    jugador.salto=false;
+                    jugador.vely=0;
+                    jugador.y=plataforma.y-jugador.height;
+                }
+            })
+            if(jugador.x>=0&&jugador.x<=canvas.width-jugador.width){
+                jugador.x+=jugador.velx
+            }else if (jugador.x<0){
+                jugador.x=0;
+            }else{
+                jugador.x=canvas.width-jugador.width;
+            };
+        };
+        window.addEventListener("keydown",event=>{
+            if(event.code==="ArrowLeft"){
+                jugador.velx=-jugador.velocidad;
+            }else if (event.code==="ArrowRight"){
+                jugador.velx=jugador.velocidad;
+            }else if(event.code==="ArrowUp"&&jugador.salto===false){
+                jugador.salto=true;
+                jugador.vely=-player.velocidad*2;}
+            });
+        window.addEventListener("keyup",event=>{
+            if(event.code==="ArrowLeft"||event.code==="ArrowRight"){
+                jugador.velx=0;
+            }
+        });
+        function bucleJuego(){
+            actualizar();
+            dibujar();
+            requestAnimationFrame(bucleJuego);
+        };
+        bucleJuego();
+        /*
+        function mover(evento){
+            switch (evento.keyCode){
+                case 37://izquierda
+                    if(x>0){
+                        x-=10
+                    }   
+                    break;
+                case 39://derecha
+                    if(x+ancho<canvas.width){
+                        x+=10
+                    }
+                    break;
+                case 38: //arriba
+                    if(y>0){
+                        y-=10
+                    }
+                    break;
+                case 40://abajo
+                    if(y+alto<canvas.height){
+                        y+=10
+                    }
+                    break;
+            }
+            actualizar();
+        };
+        function moverB(eventoB){
+            switch (eventoB.keyCode){
+                case 65://izquierda
+                    if(xb>0){
+                        xb-=10
+                    } 
+                    break;
+                case 68://derecha
+                    if(xb+ancho<canvas.width){
+                        xb+=10
+                    }
+                    break;
+                case 87: //arriba
+                    if(yb>0){
+                        yb-=10
+                    }
+                    break;
+                case 83://abajo
+                    if(yb+alto<canvas.height){
+                        yb+=10
+                    }
+                    break;
+            }
+            actualizar();
+        };
+        window.addEventListener('keydown',mover);
+        window.addEventListener('keydown',moverB);
+        actualizar();
+        */
+    </script>
+</body>
+</html>

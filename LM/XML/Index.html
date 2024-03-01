@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALIDA DATOS XML</title>
+</head>
+
+<body onload="datosXML()" style="width: 1000px; height: 800px;">
+    <p id="salida">
+    </p>
+    <script>
+        function datosXML() {
+            let ficxml = "<CURSO>" + "<ALUMNO>"
+                + "<NOMBRE>" + "Pedrito Lopez" + "</NOMBRE>"
+                + "<CLASE>" + "Primero de DAM" + "</CLASE>"
+                + "<AÑO>" + "2024" + "</AÑO>"
+                + "</ALUMNO>"
+                + "<ALUMNO>"
+                + "<NOMBRE>" + "Anita Fernandez" + "</NOMBRE>"
+                + "<CLASE>" + "Primero de DAM" + "</CLASE>"
+                + "<AÑO>" + "2024" + "</AÑO>"
+                + "</ALUMNO>"
+                + "<ALUMNO>"
+                + "<NOMBRE>" + "Paco Perez" + "</NOMBRE>"
+                + "<CLASE>" + "Primero de DAM" + "</CLASE>"
+                + "<AÑO>" + "2024" + "</AÑO>"
+                + "</ALUMNO>" 
+                + "</CURSO>";
+            let lector, fichero;
+            lector = new DOMParser();
+            fichero = lector.parseFromString(ficxml,"text/xml");
+            document.getElementById("salida").innerHTML = (fichero.getElementsByTagName('NOMBRE')[0].childNodes[0].nodeValue)+"<br>"+(fichero.getElementsByTagName('NOMBRE')[1].childNodes[0].nodeValue)+"<br>"+(fichero.getElementsByTagName('NOMBRE')[2].childNodes[0].nodeValue);
+        }
+    </script>
+</body>
+
+</html>
